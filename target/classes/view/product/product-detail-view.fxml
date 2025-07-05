@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controller.product.ProductDetailController"
+            prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: #f4f4f4;">
+
+    <VBox spacing="20.0" alignment="TOP_CENTER" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button text="← Back to Home" onAction="#handleBackToHome" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 8px 15px; -fx-background-radius: 5;"/>
+        </HBox>
+        <HBox spacing="40.0" alignment="TOP_LEFT" VBox.vgrow="ALWAYS">
+            <ImageView fx:id="productImageView" fitHeight="300.0" fitWidth="300.0" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);"/>
+            <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                <Label fx:id="titleLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Label fx:id="categoryLabel" style="-fx-font-size: 16px; -fx-text-fill: #666;"/>
+                <Label fx:id="priceLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #28a745;"/>
+                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label text="Rating:" style="-fx-font-size: 16px; -fx-text-fill: #555;"/>
+                    <Label fx:id="ratingLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #ffc107;"/>
+                    <Label fx:id="countLabel" style="-fx-font-size: 14px; -fx-text-fill: #888;"/>
+                </HBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                    <content>
+                        <Text fx:id="descriptionText" wrappingWidth="400" style="-fx-font-size: 16px; -fx-text-fill: #444;"/>
+                    </content>
+                </ScrollPane>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Button text="Add to Cart" onAction="#handleAddToCart" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px; -fx-background-radius: 5;"/>
+                    <Spinner fx:id="quantitySpinner" min="1" initialValue="1" max="100"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>
