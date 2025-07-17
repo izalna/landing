@@ -40,8 +40,13 @@ public class HomeController {
 
     @FXML
     public void initialize() {
-        //Image image = new Image(getClass().getResource("/images/landing.jpg").toExternalForm());
-        //backgroundImage.setImage(image);
+        Image image = new Image(getClass().getResource("/images/b2.png").toExternalForm());
+        backgroundImage.setImage(image);
+        backgroundImage.setSmooth(true);
+        backgroundImage.setCache(true);
+        backgroundImage.setFitWidth(1280);
+        backgroundImage.setFitHeight(300);
+        backgroundImage.setPreserveRatio(true);
 
         Tooltip cartTooltip = new Tooltip("View Cart");
         Tooltip.install(cartIconImageView, cartTooltip);
@@ -125,7 +130,7 @@ public class HomeController {
         priceLabel.setStyle("-fx-text-fill: green; -fx-font-size: 13px;");
 
         Button addToCartButton = new Button("Add to Cart");
-        addToCartButton.setStyle("-fx-background-color: darkgreen; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 5;");
+        addToCartButton.setStyle("-fx-background-color: rgba(168, 210, 242, 1); -fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 5;");
         addToCartButton.setMaxWidth(Double.MAX_VALUE);
 
         addToCartButton.setOnAction(event -> {
@@ -262,19 +267,19 @@ public class HomeController {
     }
 
     // 🔽 Tambahan: Event handler untuk tombol kategori
-    @FXML private void handleWomenClick(ActionEvent event) {
-        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori WOMEN.");
+    @FXML private void handlePakaianClick(ActionEvent event) {
+        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori Pakaian.");
     }
 
-    @FXML private void handleMenClick(ActionEvent event) {
-        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori MEN.");
+    @FXML private void handleAksesorisClick(ActionEvent event) {
+        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori Aksesoris.");
     }
 
-    @FXML private void handleKidsClick(ActionEvent event) {
-        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori KIDS.");
+    @FXML private void handleGamingGearClick(ActionEvent event) {
+        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori Gaming Gear.");
     }
 
-    @FXML private void handleBabyClick(ActionEvent event) {
-        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori BABY.");
+    @FXML private void handleSmartphoneClick(ActionEvent event) {
+        showAlert(Alert.AlertType.INFORMATION, "Kategori", "Anda memilih kategori Smartphone.");
     }
 }
